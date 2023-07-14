@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<style>
+  /*--thank you pop starts here--*/
+.thank-you-pop{
+	width:100%;
+ 	padding:20px;
+	text-align:center;
+}
+
+.thank-you-pop a i{
+	margin-right:5px;
+	color:#fff;
+}
+#ignismyModal .modal-header{
+    border:0px;
+}
+
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+  }
+  body{
+    background-color: black;
+  }
+  #div {
+  width: 35px;
+  height: 2px;
+  background-color: rgb(255, 255, 255);
+  margin: 6px 0;
+
+  
+}
+</style>
+<div class="container-fluid p-3"style="">
+  <div class="row">
+    <div class="col-sm-6" style="background-color: white; margin: 0 auto;box-shadow: 0 0 15px 8px black;">
+      {% for i in feed %}
+      <div class="row">
+        <div class="col-sm-12" style="text-align:right;" >
+
+         
+          
+
+          <div class="cardm-4 mt-3 mb-3" style=" height: auto;text-align: center;background-color: #191c24;color: white; border-radius: 30px;">
+            {% if i.user_id == filt.id%}
+            <div class="row">
+              <div class="col-sm-12 mt-3">
+
+                <div class="dropdown" style="margin-left: 80%;">
+                  <div class="btn btn-secondary dropdown-toggle" type="div" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #191c24; border: 0;">
+                    <div id="div"></div>
+                    <div  id="div"></div>
+                    <div  id="div"></div>
+                  </div>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="{% url 'edit_post' i.id%}">Edit</a>
+                    <a class="dropdown-item" href="{% url 'delete_post' i.id%}"> Delete</a>
+              
+                  </div>
+                </div>
+                
+              </div>
+
+              
+            </div>
+            {%else%}
+            {%endif%}
+
+            <div class="count-indicator  ml-2" style="text-align: left;">
+              <img class="img-xs rounded-circle " src="{{i.user.image.url}}" alt="" width="70"> 
+              {{i.user.first_name}} {{i.user.last_name}}&nbsp;&#8250;&#8250;&#8250; &nbsp;{{i.tag}}
+            </div>
+
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-12">
+                  <h3 style="text-align: center;">{{i.head}}</h3>
+                </div>
+              </div>
+              <div style="text-align: justify; padding: 10px; font-size: 18px;">
+                <p class="card-title">{{i.description}}</p>
+              </div>
+              
+
+          </div>
+          
+
+        </div>
+      </div>
+
+    </div>
+    {%endfor%}
+  </div>
+
+</div>
+
+
+{% endblock %}

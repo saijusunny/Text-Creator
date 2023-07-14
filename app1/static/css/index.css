@@ -1,0 +1,43 @@
+#signup{
+  text-decoration: none; 
+  color:white;
+  text-underline-offset: none;
+}
+#vie{
+  text-decoration: none; 
+  color:orange;
+  text-underline-offset: none;
+}
+
+#vie:hover{
+  text-decoration: none; 
+  color:white;
+  text-underline-offset: none;
+}
+#signup{
+  color: orangered;
+  text-decoration: none;
+}
+#signup:hover{
+  text-decoration: none;
+  text-underline-offset: none;
+  color: white;
+  text-underline-offset: none; 
+  text-emphasis: none;
+  text-decoration-color: none;
+  text-emphasis-style: none;
+  
+
+}
+nav{
+
+  margin-right: auto;
+  
+}
+.navbar-nav{
+  margin-left: auto;
+  
+}
+
+
+
